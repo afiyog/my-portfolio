@@ -16,12 +16,12 @@ jobs:
       - name: Build image
         run: | 
               
-              docker build -t ${{secrets.REGISTRY_USER}}/portfolio:${{github.run_number}} .
-              docker build -t ${{secrets.REGISTRY_USER}}/portfolio .
+              docker build -t afiyog/portfolio .
+              docker build -t afiyog/portfolio .
       - name: Push image 
         run: |
-            docker login -u ${{secrets.REGISTRY_USER}} -p ${{secrets.REGISTRY_PASS}}
+            docker login -u afiyog -p ${{secrets.REGISTRY_PASS}}
           
           
-            docker push  ${{secrets.REGISTRY_USER}}/portfolio:${{github.run_number}}
+            docker push afiyog/portfolio
     
